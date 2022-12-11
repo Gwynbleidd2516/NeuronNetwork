@@ -94,4 +94,6 @@ int main()
     // double b[] = { 4,1 };
     // double c[] = { 1 };
     // cout << a.learn(b, c);
+
+    system("pause");
 }
