@@ -25,6 +25,8 @@ public:
 
 	double getDerivedValue();
 
+	void operator=(Neuron& neuron);
+
 private:
 	double value;
 	double ActivatedValue;

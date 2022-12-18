@@ -66,7 +66,11 @@ double Neuron::getDerivedValue()
 		else
 			return 0;
 		break;
-	default:
-		break;
 	}
+}
+
+void Neuron::operator=(Neuron& neuron)
+{
+	this->value=neuron.value;
+	this->func=neuron.func;
 }

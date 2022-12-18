@@ -4,6 +4,7 @@
 #include<math.h>
 #include<vector>
 #include<string>
+#include<fstream>
 #include"Neuron.h"
 using namespace std;
 
@@ -26,21 +27,26 @@ private:
 	vector<double> sinops2;
 	vector<double> sinops3;
 	vector<double> sinopsOutput;
+	double error=0;
 
 public:
 	NeuronNetwork();
 
-	NeuronNetwork(int inputDataCapasity, int layer1Capasity, int layer2Capasity, int layer3Capasity, int outputDataCapasity, bool Bias, double studySpeed, double moment, Neuron::Function func = Neuron::SIGM);
+	NeuronNetwork(int inputDataCapasity, int layer1Capasity, int layer2Capasity, int layer3Capasity, int outputDataCapasity);
 
-	NeuronNetwork(int inputDataCapasity, int layer1Capasity, int layer2Capasity, int outputDataCapasity, bool Bias, double studySpeed, double moment, Neuron::Function func = Neuron::SIGM);
+	NeuronNetwork(int inputDataCapasity, int layer1Capasity, int layer2Capasity, int outputDataCapasity);
 
-	NeuronNetwork(int inputDataCapasity, int layer1Capasity, int outputDataCapasity, bool Bias, double studySpeed, double moment, Neuron::Function func = Neuron::SIGM);
+	NeuronNetwork(int inputDataCapasity, int layer1Capasity, int outputDataCapasity);
 
-	void setNeuronNetwork(int inputDataCapasity, int layer1Capasity, int layer2Capasity, int layer3Capasity, int outputDataCapasity, bool Bias, double studySpeed, double moment, Neuron::Function func = Neuron::SIGM);
+	void setNeuronNetwork(int inputDataCapasity, int layer1Capasity, int layer2Capasity, int layer3Capasity, int outputDataCapasity);
 
-	void setNeuronNetwork(int inputDataCapasity, int layer1Capasity, int layer2Capasity, int outputDataCapasity, bool Bias, double studySpeed, double moment, Neuron::Function func = Neuron::SIGM);
+	void setNeuronNetwork(int inputDataCapasity, int layer1Capasity, int layer2Capasity, int outputDataCapasity);
 
-	void setNeuronNetwork(int inputDataCapasity, int layer1Capasity, int outputDataCapasity, bool Bias, double studySpeed, double moment, Neuron::Function func = Neuron::SIGM);
+	void setNeuronNetwork(int inputDataCapasity, int layer1Capasity, int outputDataCapasity);
 
-	double learn(double inputData[], double outputData[]);
+	void learn(double inputData[], double outputData[], bool Bias, double studySpeed, double moment, Neuron::Function func = Neuron::SIGM);
+
+	void saveResults(string path);
+
+	double getError();
 };
