@@ -10,7 +10,7 @@ Neuron::Neuron(double value, Function function)
 		ActivatedValue = 1 / (1 + pow(e, -value));
 		break;
 	case Neuron::TAHN:
-		DerivedValue = 1 - pow(ActivatedValue, 2);
+		ActivatedValue = (pow(e,value)-pow(e,-value))/(pow(e,value)+pow(e,-value));
 		break;
 	case Neuron::RELU:
 		ActivatedValue = fmax(0, value);
@@ -32,7 +32,7 @@ void Neuron::setValue(double value, Function function)
 		ActivatedValue = 1 / (1 + pow(e, -value));
 		break;
 	case Neuron::TAHN:
-		DerivedValue = 1 - pow(ActivatedValue, 2);
+		ActivatedValue = (pow(e,value)-pow(e,-value))/(pow(e,value)+pow(e,-value));
 		break;
 	case Neuron::RELU:
 		ActivatedValue = fmax(0, value);
@@ -58,7 +58,7 @@ double Neuron::getDerivedValue()
 		return ActivatedValue * (1 - ActivatedValue);
 		break;
 	case Neuron::TAHN:
-		return 1 - pow(ActivatedValue, 2);
+		return 1/pow(((pow(e,value)+pow(e,-value)))/2,2);
 		break;
 	case Neuron::RELU:
 		if (value > 0)

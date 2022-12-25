@@ -4,11 +4,9 @@ NeuronNetwork::NeuronNetwork()
 {
 }
 
-NeuronNetwork::NeuronNetwork(int inputDataCapasity, int layer1Capasity, int layer2Capasity, int layer3Capasity, int outputDataCapasity)
+NeuronNetwork::NeuronNetwork(int inputDataCapasity, int layer1Capasity, int layer2Capasity, int layer3Capasity)
 {
 	inputData.resize(inputDataCapasity);
-
-	outputData.resize(outputDataCapasity);
 
 	layer1.resize(layer1Capasity);
 
@@ -22,9 +20,7 @@ NeuronNetwork::NeuronNetwork(int inputDataCapasity, int layer1Capasity, int laye
 
 	sinops3.resize(layer2Capasity * layer3Capasity);
 
-	sinopsOutput.resize(layer3Capasity * outputDataCapasity);
-
-	outputNeuron.resize(outputDataCapasity);
+	sinopsOutput.resize(layer3Capasity);
 	
 	for (int i = 0; i < sinops1.size(); i++)
 	{
@@ -46,14 +42,11 @@ NeuronNetwork::NeuronNetwork(int inputDataCapasity, int layer1Capasity, int laye
 	{
 		sinopsOutput[i] = DEFOULT_LEARN;
 	}
-
 }
 
-NeuronNetwork::NeuronNetwork(int inputDataCapasity, int layer1Capasity, int layer2Capasity, int outputDataCapasity)
+NeuronNetwork::NeuronNetwork(int inputDataCapasity, int layer1Capasity, int layer2Capasity)
 {
 	inputData.resize(inputDataCapasity);
-
-	outputData.resize(outputDataCapasity);
 
 	layer1.resize(layer1Capasity);
 
@@ -67,9 +60,7 @@ NeuronNetwork::NeuronNetwork(int inputDataCapasity, int layer1Capasity, int laye
 
 	sinops3.~vector();
 
-	sinopsOutput.resize(layer2Capasity * outputDataCapasity);
-
-	outputNeuron.resize(outputDataCapasity);
+	sinopsOutput.resize(layer2Capasity);
 	
 	for (int i = 0; i < sinops1.size(); i++)
 	{
@@ -94,11 +85,9 @@ NeuronNetwork::NeuronNetwork(int inputDataCapasity, int layer1Capasity, int laye
 
 }
 
-NeuronNetwork::NeuronNetwork(int inputDataCapasity, int layer1Capasity, int outputDataCapasity)
+NeuronNetwork::NeuronNetwork(int inputDataCapasity, int layer1Capasity)
 {
 	inputData.resize(inputDataCapasity);
-
-	outputData.resize(outputDataCapasity);
 
 	layer1.resize(layer1Capasity);
 
@@ -112,9 +101,7 @@ NeuronNetwork::NeuronNetwork(int inputDataCapasity, int layer1Capasity, int outp
 
 	sinops3.~vector();
 
-	sinopsOutput.resize(layer1Capasity * outputDataCapasity);
-
-	outputNeuron.resize(outputDataCapasity);
+	sinopsOutput.resize(layer1Capasity);
 
 	for (int i = 0; i < sinops1.size(); i++)
 	{
@@ -139,11 +126,9 @@ NeuronNetwork::NeuronNetwork(int inputDataCapasity, int layer1Capasity, int outp
 
 }
 
-void NeuronNetwork::setNeuronNetwork(int inputDataCapasity, int layer1Capasity, int layer2Capasity, int layer3Capasity, int outputDataCapasity)
+void NeuronNetwork::setNeuronNetwork(int inputDataCapasity, int layer1Capasity, int layer2Capasity, int layer3Capasity)
 {
 	inputData.resize(inputDataCapasity);
-
-	outputData.resize(outputDataCapasity);
 
 	layer1.resize(layer1Capasity);
 
@@ -157,9 +142,7 @@ void NeuronNetwork::setNeuronNetwork(int inputDataCapasity, int layer1Capasity, 
 
 	sinops3.resize(layer2Capasity * layer3Capasity);
 
-	sinopsOutput.resize(layer3Capasity * outputDataCapasity);
-
-	outputNeuron.resize(outputDataCapasity);
+	sinopsOutput.resize(layer3Capasity);
 
 	for (int i = 0; i < sinops1.size(); i++)
 	{
@@ -184,11 +167,9 @@ void NeuronNetwork::setNeuronNetwork(int inputDataCapasity, int layer1Capasity, 
 
 }
 
-void NeuronNetwork::setNeuronNetwork(int inputDataCapasity, int layer1Capasity, int layer2Capasity, int outputDataCapasity)
+void NeuronNetwork::setNeuronNetwork(int inputDataCapasity, int layer1Capasity, int layer2Capasity)
 {
 	inputData.resize(inputDataCapasity);
-
-	outputData.resize(outputDataCapasity);
 
 	layer1.resize(layer1Capasity);
 
@@ -202,9 +183,7 @@ void NeuronNetwork::setNeuronNetwork(int inputDataCapasity, int layer1Capasity, 
 
 	sinops3.~vector();
 
-	sinopsOutput.resize(layer2Capasity * outputDataCapasity);
-
-	outputNeuron.resize(outputDataCapasity);
+	sinopsOutput.resize(layer2Capasity);
 
 	for (int i = 0; i < sinops1.size(); i++)
 	{
@@ -229,11 +208,9 @@ void NeuronNetwork::setNeuronNetwork(int inputDataCapasity, int layer1Capasity, 
 	
 }
 
-void NeuronNetwork::setNeuronNetwork(int inputDataCapasity, int layer1Capasity, int outputDataCapasity)
+void NeuronNetwork::setNeuronNetwork(int inputDataCapasity, int layer1Capasity)
 {
 	inputData.resize(inputDataCapasity);
-
-	outputData.resize(outputDataCapasity);
 
 	layer1.resize(layer1Capasity);
 
@@ -247,9 +224,7 @@ void NeuronNetwork::setNeuronNetwork(int inputDataCapasity, int layer1Capasity, 
 
 	sinops3.~vector();
 
-	sinopsOutput.resize(layer1Capasity * outputDataCapasity);
-
-	outputNeuron.resize(outputDataCapasity);
+	sinopsOutput.resize(layer1Capasity);
 
 	for (int i = 0; i < sinops1.size(); i++)
 	{
@@ -272,18 +247,14 @@ void NeuronNetwork::setNeuronNetwork(int inputDataCapasity, int layer1Capasity, 
 		sinopsOutput[i] = DEFOULT_LEARN;
 	}
 
+
 }
 
-void NeuronNetwork::learn(double inputData[], double outputData[], bool bias, double studySpeed, double moment, Neuron::Function func)
+void NeuronNetwork::learn(double inputData[], bool outputData, bool bias, double studySpeed, double moment, double min_error, Neuron::Function func)
 {
 	for(int i=0;i<this->inputData.size();i++)
 	{
 		this->inputData[i]=inputData[i];
-	}
-
-	for(int i=0;i<this->outputData.size();i++)
-	{
-		this->outputData[i]=outputData[i];
 	}
 
 	vector<double> deltaSinops1(sinops1.size());
@@ -312,54 +283,55 @@ void NeuronNetwork::learn(double inputData[], double outputData[], bool bias, do
 		x=0;
 	}
 
-	int index=0;
-	for (int i = 0; i < layer1.size(); i++) 
+	do
 	{
-		double sparametr = 0;
-		for (int r = 0; r < this->inputData.size(); r++)
+		error=0;
+		int index=0;
+		for (int i = 0; i < layer1.size(); i++) 
 		{
-			sparametr += inputData[r] * sinops1[index++]+bias;
+			double sparametr = 0;
+			for (int r = 0; r < this->inputData.size(); r++)
+			{
+				sparametr += inputData[r] * sinops1[index++]+bias;
+			}
+			layer1[i].setValue(sparametr);
 		}
-		layer1[i].setValue(sparametr);
-	}
 
-	index=0;
-	for (int i = 0; i < layer2.size(); i++)
-	{
-		double sparametr = 0;
-		for (int r = 0; r < layer1.size(); r++)
+		index=0;
+		for (int i = 0; i < layer2.size(); i++)
 		{
-			sparametr += layer1[r].getActivatedValue() * sinops2[index++]+bias;
+			double sparametr = 0;
+			for (int r = 0; r < layer1.size(); r++)
+			{
+				sparametr += layer1[r].getActivatedValue() * sinops2[index++]+bias;
+			}
+			layer2[i].setValue(sparametr);
 		}
-		layer2[i].setValue(sparametr);
-	}
+		
+
+		index=0;
+		for (int i = 0; i < layer3.size(); i++)
+		{
+			double sparametr = 0;
+			for (int r = 0; r < layer2.size(); r++)
+			{
+				sparametr += layer2[r].getActivatedValue() * sinops3[index++]+bias;
+			}
+			layer3[i].setValue(sparametr);
+		}
+		
+
+		index=0;
+		bool write=false;
 	
-
-	index=0;
-	for (int i = 0; i < layer3.size(); i++)
-	{
-		double sparametr = 0;
-		for (int r = 0; r < layer2.size(); r++)
-		{
-			sparametr += layer2[r].getActivatedValue() * sinops3[index++]+bias;
-		}
-		layer3[i].setValue(sparametr);
-	}
-	
-
-	index=0;
-	bool write=false;
-	for (int i=0;i<outputNeuron.size();i++)
-	{
 		double sparametr=0;
 		for (int r = 0; r < layer1.size(); r++)
 		{
 			sparametr += layer1[r].getActivatedValue() * sinopsOutput[index++]+bias;
 			write=true;
 		}
-		if(write) outputNeuron[i].setValue(sparametr,func);
+		if(write) outputNeuron.setValue(sparametr,func);
 		write =false;
-
 		index=0;
 		sparametr=0;
 		for (int r = 0; r < layer2.size(); r++)
@@ -367,9 +339,8 @@ void NeuronNetwork::learn(double inputData[], double outputData[], bool bias, do
 			sparametr += layer2[r].getActivatedValue() * sinopsOutput[index++]+bias;
 			write=true;
 		}
-		if(write) outputNeuron[i].setValue(sparametr,func);
+		if(write) outputNeuron.setValue(sparametr,func);
 		write =false;
-
 		index=0;
 		sparametr=0;
 		for (int r = 0; r < layer3.size(); r++)
@@ -377,82 +348,124 @@ void NeuronNetwork::learn(double inputData[], double outputData[], bool bias, do
 			sparametr += layer3[r].getActivatedValue() * sinopsOutput[index++]+bias;
 			write=true;
 		}
-		if(write) outputNeuron[i].setValue(sparametr,func);
+		if(write) outputNeuron.setValue(sparametr,func);
 		write =false;
-	}
+		
+		error=pow(outputData-outputNeuron.getActivatedValue(),2);
 
-	
-	
-	for (int i=0;i<this->outputData.size();i++)
-	{
-		error+=pow(this->outputData[i]-outputNeuron[i].getActivatedValue(),2);
-	}
-	error/=outputNeuron.size();
-
-	for (int i = 0; i < outputNeuron.size(); i++)
-	{
-		cout << outputNeuron[i].getActivatedValue() << "\t" <<error*100<<endl;
-	}
-
-	// GRADout calculation
-	bool grad=false;
-	for(auto& x : outputNeuron)
-	{
-		grad=false;
-		for(auto& l:layer3)
-		{
-			GRADOut.push_back(x.getDerivedValue()*error*l.getActivatedValue());
-			grad=true;
-		}
-		if(!grad)
-		{
-			for(auto& l:layer2)
+		// GRADout calculation
+		bool grad=false;
+			grad=false;
+			for(auto& l:layer3)
 			{
-				GRADOut.push_back(x.getDerivedValue()*error*l.getActivatedValue());
+				GRADOut.push_back(outputNeuron.getDerivedValue()*error*l.getActivatedValue());
 				grad=true;
 			}
-		}
-		if(!grad)
-		{
-			for(auto& l:layer1)
+			if(!grad)
 			{
-				GRADOut.push_back(x.getDerivedValue()*error*l.getActivatedValue());
+				for(auto& l:layer2)
+				{
+					GRADOut.push_back(outputNeuron.getDerivedValue()*error*l.getActivatedValue());
+					grad=true;
+				}
+			}
+			if(!grad)
+			{
+				for(auto& l:layer1)
+				{
+					GRADOut.push_back(outputNeuron.getDerivedValue()*error*l.getActivatedValue());
+				}
+			}
+		
+		
+		
+		
+		for(int i=0;i<sinops3.size();)
+		{
+			for(auto& l3 : layer3)
+			{
+				for(auto& l2 : layer2)
+				{
+					GRAD3.push_back(l2.getDerivedValue()*error*sinops3[i]*l3.getDerivedValue());
+					i++;
+				}
 			}
 		}
-	}
-	
-	
-	
-	grad=false;
-	for(auto& l3 : layer3)
-	{
-		for(auto& l2 : layer2)
+		
+		for(int i=0;i<sinops2.size();)
 		{
-			for(auto& sinops : sinops3)
+			for(auto& l2 : layer2)
 			{
-				GRAD3.push_back(l2.getDerivedValue()*(sinops));
-				grad=true;
+				for(auto& l1 : layer1)
+				{
+					GRAD2.push_back(l1.getDerivedValue()*error*sinops2[i]*l2.getDerivedValue());
+					i++;
+				}
 			}
 		}
-	}
-	
 
-	for(auto& x:GRADOut)
-	{
-		cout<<"t"<<x<<endl;
-	}
-	cout<<"\n";
-	
-	int g=0;
-	for(auto& sinops : sinopsOutput)
-	{
-		sinops+=studySpeed*GRADOut[g]+moment*deltaSinops3[g];
-		g++;
-	}
-	for(auto& x:sinopsOutput)
-	{
-		cout<<x<<endl;
-	}
+		for(int i=0;i<sinops1.size();)
+		{
+			for(auto& l1 : layer1)
+			{
+				for(auto& in : this->inputData)
+				{
+					GRAD1.push_back(in*error*sinops1[i]*l1.getDerivedValue());
+					i++;
+				}
+			}
+		}
+
+		
+		int g=0;
+		for(auto& sinops : sinopsOutput)
+		{
+			if(outputData==0)
+			{
+				sinops+=-studySpeed*GRADOut[g]+moment*deltaSinopsOutput[g];
+				deltaSinopsOutput[g]=-studySpeed*GRADOut[g]+moment*deltaSinopsOutput[g];
+			}else
+			{
+				sinops+=studySpeed*GRADOut[g]+moment*deltaSinopsOutput[g];
+				deltaSinopsOutput[g]=studySpeed*GRADOut[g]+moment*deltaSinopsOutput[g];
+			}
+			g++;
+		}
+
+		g=0;
+		for(auto& sinops : sinops3)
+		{
+			sinops+=studySpeed*GRAD3[g]+moment*deltaSinops3[g];
+			deltaSinops3[g]=studySpeed*GRAD3[g]+moment*deltaSinops3[g];
+			g++;
+		}
+
+		g=0;
+		for(auto& sinops : sinops2)
+		{
+			sinops+=studySpeed*GRAD2[g]+moment*deltaSinops2[g];
+			deltaSinops2[g]=studySpeed*GRAD2[g]+moment*deltaSinops2[g];
+			g++;
+		}
+
+		g=0;
+		for(auto& sinops : sinops1)
+		{
+			sinops+=studySpeed*GRAD1[g]+moment*deltaSinops1[g];
+			deltaSinops1[g]=studySpeed*GRAD1[g]+moment*deltaSinops1[g];
+			g++;
+		}
+
+		cout<<outputNeuron.getActivatedValue()<<endl;
+		
+		cout<<error<<"\n\n";
+		
+
+		GRAD1.clear();
+		GRAD2.clear();
+		GRAD3.clear();
+		GRADOut.clear();
+	} while (error>min_error);
 }
 
 
@@ -460,28 +473,131 @@ void NeuronNetwork::saveResults(string path)
 {
 	ofstream file;
 	file.open(path);
-	file<<"//1\n";
+	
 	for (auto& x:sinops1)
 	{
 		file<<to_string(x)+"\n";
 	}
 
-	file<<"//2\n";
 	for (auto& x:sinops2)
 	{
 		file<<to_string(x)+"\n";
 	}
 
-	file<<"//3\n";
 	for (auto& x:sinops3)
 	{
 		file<<to_string(x)+"\n";
 	}
 
-	file<<"//out\n";
 	for (auto& x:sinopsOutput)
 	{
 		file<<to_string(x)+"\n";
 	}
 	file.close();
+}
+
+void NeuronNetwork::loadFromFile(string path)
+{
+	ifstream file;
+	file.open(path);
+	string buffer;
+	
+	for (auto& x:sinops1)
+	{
+		getline(file, buffer);
+		x=stod(buffer);
+	}
+
+	for (auto& x:sinops2)
+	{
+		getline(file, buffer);
+		x=stod(buffer);
+	}
+
+	for (auto& x:sinops3)
+	{
+		getline(file, buffer);
+		x=stod(buffer);
+	}
+
+	for (auto& x:sinopsOutput)
+	{
+		getline(file, buffer);
+		x=stod(buffer);
+	}
+	file.close();
+	
+}
+
+double NeuronNetwork::run(double inputData[], Neuron::Function func)
+{
+	int index=0;
+		for (int i = 0; i < layer1.size(); i++) 
+		{
+			double sparametr = 0;
+			for (int r = 0; r < this->inputData.size(); r++)
+			{
+				sparametr += inputData[r] * sinops1[index++]+bias;
+			}
+			layer1[i].setValue(sparametr);
+		}
+
+		index=0;
+		for (int i = 0; i < layer2.size(); i++)
+		{
+			double sparametr = 0;
+			for (int r = 0; r < layer1.size(); r++)
+			{
+				sparametr += layer1[r].getActivatedValue() * sinops2[index++]+bias;
+			}
+			layer2[i].setValue(sparametr);
+		}
+		
+
+		index=0;
+		for (int i = 0; i < layer3.size(); i++)
+		{
+			double sparametr = 0;
+			for (int r = 0; r < layer2.size(); r++)
+			{
+				sparametr += layer2[r].getActivatedValue() * sinops3[index++]+bias;
+			}
+			layer3[i].setValue(sparametr);
+		}
+		
+
+		index=0;
+		bool write=false;
+			double sparametr=0;
+			for (int r = 0; r < layer1.size(); r++)
+			{
+				sparametr += layer1[r].getActivatedValue() * sinopsOutput[index++]+bias;
+				write=true;
+			}
+			if(write) outputNeuron.setValue(sparametr,func);
+			write =false;
+
+			index=0;
+			sparametr=0;
+			for (int r = 0; r < layer2.size(); r++)
+			{
+				sparametr += layer2[r].getActivatedValue() * sinopsOutput[index++]+bias;
+				write=true;
+			}
+			if(write) outputNeuron.setValue(sparametr,func);
+			write =false;
+
+			index=0;
+			sparametr=0;
+			for (int r = 0; r < layer3.size(); r++)
+			{
+				sparametr += layer3[r].getActivatedValue() * sinopsOutput[index++]+bias;
+				write=true;
+			}
+			if(write) outputNeuron.setValue(sparametr,func);
+			write =false;
+		
+	
+
+	return outputNeuron.getActivatedValue();
 }

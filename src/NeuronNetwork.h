@@ -8,7 +8,7 @@
 #include"Neuron.h"
 using namespace std;
 
-#define DEFOULT_LEARN 0.1
+#define DEFOULT_LEARN 0.01
 
 class NeuronNetwork
 {
@@ -17,9 +17,9 @@ private:
 	vector<Neuron> layer1;
 	vector<Neuron> layer2;
 	vector<Neuron> layer3;
-	vector<Neuron> outputNeuron;
-	vector<double> outputData;
-	bool bias;
+	Neuron outputNeuron;
+	double outputData;
+	bool bias=true;
 	double studySpeed;
 	double moment;
 	Neuron::Function type;
@@ -32,21 +32,25 @@ private:
 public:
 	NeuronNetwork();
 
-	NeuronNetwork(int inputDataCapasity, int layer1Capasity, int layer2Capasity, int layer3Capasity, int outputDataCapasity);
+	NeuronNetwork(int inputDataCapasity, int layer1Capasity, int layer2Capasity, int layer3Capasity);
 
-	NeuronNetwork(int inputDataCapasity, int layer1Capasity, int layer2Capasity, int outputDataCapasity);
+	NeuronNetwork(int inputDataCapasity, int layer1Capasity, int layer2Capasity);
 
-	NeuronNetwork(int inputDataCapasity, int layer1Capasity, int outputDataCapasity);
+	NeuronNetwork(int inputDataCapasity, int layer1Capasity);
 
-	void setNeuronNetwork(int inputDataCapasity, int layer1Capasity, int layer2Capasity, int layer3Capasity, int outputDataCapasity);
+	void setNeuronNetwork(int inputDataCapasity, int layer1Capasity, int layer2Capasity, int layer3Capasity);
 
-	void setNeuronNetwork(int inputDataCapasity, int layer1Capasity, int layer2Capasity, int outputDataCapasity);
+	void setNeuronNetwork(int inputDataCapasity, int layer1Capasity, int layer2Capasity);
 
-	void setNeuronNetwork(int inputDataCapasity, int layer1Capasity, int outputDataCapasity);
+	void setNeuronNetwork(int inputDataCapasity, int layer1Capasity);
 
-	void learn(double inputData[], double outputData[], bool Bias, double studySpeed, double moment, Neuron::Function func = Neuron::SIGM);
+	void learn(double inputData[], bool outputData, bool Bias, double studySpeed, double moment, double min_error, Neuron::Function func = Neuron::SIGM);
 
 	void saveResults(string path);
 
 	double getError();
+
+	void loadFromFile(string path);
+
+	double run(double inputData[], Neuron::Function func = Neuron::SIGM);
 };

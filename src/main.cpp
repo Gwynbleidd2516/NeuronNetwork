@@ -2,8 +2,8 @@
 #include<stdint.h>
 #include<vector>
 #include"Neuron.h"
-// #include"Matrix.h"
 #include"NeuronNetwork.h"
+#include<iostream>
 using namespace std;
 // using namespace cv;
 
@@ -90,8 +90,44 @@ int main()
     //     cout << 0;
     // }
 
-    NeuronNetwork a(2, 2,2,2, 2);
-    double b[] = { 1,0 };
-    double c[] = { 1,1 };
-    a.learn(b, c, false, 0.2, 0.2);
+
+    NeuronNetwork gorisontal(1,4,1,4);
+    NeuronNetwork vertical(1,4,1,4);
+    gorisontal.saveResults("brain1.txt");
+    vertical.saveResults("brain2.txt");
+
+    while (true)
+    {   
+    
+        double field[9];
+        for(int x=0;x<9;x++)
+        {
+            cin>>field[x];
+        }
+        
+
+        double gor,ver;
+        cin>>gor>>ver;
+
+        if(gor==-1) break;
+
+        gorisontal.loadFromFile("brain1.txt");
+        vertical.loadFromFile("brain2.txt");
+       
+        gorisontal.learn(field,gor,true,0.7,0.3,0.001);
+        gorisontal.saveResults("brain1.txt");
+        vertical.learn(field,ver,true,0.7,0.3,0.001);
+        vertical.saveResults("brain2.txt");
+    }
+
+    double field[9];
+    for(int x=0;x<9;x++)
+    {
+        cin>>field[x];
+    }
+
+    gorisontal.loadFromFile("brain1.txt");
+    vertical.loadFromFile("brain2.txt");
+    cout<<gorisontal.run(field)<<vertical.run(field);
+
 }
