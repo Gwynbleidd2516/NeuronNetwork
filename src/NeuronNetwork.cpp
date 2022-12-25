@@ -442,6 +442,7 @@ void NeuronNetwork::learn(double inputData[], double outputData[], bool bias, do
 		cout<<"t"<<x<<endl;
 	}
 	cout<<"\n";
+	
 	int g=0;
 	for(auto& sinops : sinopsOutput)
 	{
