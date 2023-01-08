@@ -28,6 +28,10 @@ private:
 	vector<double> sinops3;
 	vector<double> sinopsOutput;
 	double error=0;
+	vector<double> deltaSinops1;
+	vector<double> deltaSinops2;
+	vector<double> deltaSinops3;
+	vector<double> deltaSinopsOutput;
 
 public:
 	NeuronNetwork();

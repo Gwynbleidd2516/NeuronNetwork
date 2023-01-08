@@ -91,10 +91,10 @@ int main()
     // }
 
 
-    NeuronNetwork gorisontal(1,4,1,4);
-    NeuronNetwork vertical(1,4,1,4);
-    gorisontal.saveResults("brain1.txt");
-    vertical.saveResults("brain2.txt");
+    NeuronNetwork gorisontal(9,5,2,1);
+    NeuronNetwork vertical(9,5,2,1);
+    // gorisontal.loadFromFile("brain1.txt");
+    // vertical.loadFromFile("brain2.txt");
 
     while (true)
     {   
@@ -109,14 +109,14 @@ int main()
         double gor,ver;
         cin>>gor>>ver;
 
-        if(gor==-1) break;
-
-        gorisontal.loadFromFile("brain1.txt");
-        vertical.loadFromFile("brain2.txt");
-       
-        gorisontal.learn(field,gor,true,0.7,0.3,0.001);
+        if(gor==-1 || ver==-1) break;
+        gorisontal.learn(field,gor,true,0.7,0.3,0.0001);
         gorisontal.saveResults("brain1.txt");
-        vertical.learn(field,ver,true,0.7,0.3,0.001);
+        gorisontal.learn(field,gor,true,0.7,0.3,0.0001);
+        gorisontal.saveResults("brain1.txt");
+        vertical.learn(field,ver,true,0.7,0.3,0.0001);
+        vertical.saveResults("brain2.txt");
+        vertical.learn(field,ver,true,0.7,0.3,0.0001);
         vertical.saveResults("brain2.txt");
     }
 
@@ -128,6 +128,12 @@ int main()
 
     gorisontal.loadFromFile("brain1.txt");
     vertical.loadFromFile("brain2.txt");
-    cout<<gorisontal.run(field)<<vertical.run(field);
+    cout<<gorisontal.run(field)<<"\t"<<vertical.run(field);
 
+    // NeuronNetwork a(2,2);
+    // double b[2];
+    // b[0]=1;
+    // b[1]=0;
+    // a.learn(b,false,true,0.7,0.3,0.01);
+    // cout<<a.run(b);
 }
