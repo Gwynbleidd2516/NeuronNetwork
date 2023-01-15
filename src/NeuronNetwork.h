@@ -8,7 +8,7 @@
 #include"Neuron.h"
 using namespace std;
 
-#define DEFOULT_LEARN 0.01
+#define DEFOULT_LEARN 0
 
 class NeuronNetwork
 {
