@@ -178,27 +178,32 @@ int main()
     NeuronNetwork versicolor(4,10);
     bool bias=true;
     Neuron::Function func=Neuron::SIGM;
+    double studySpeed=0.1,moment=0.9,error=0.01;
+
+    // double pi = 3.1415926535;
+    // cout<<atan(tan(45*pi/180))*180/pi<<endl;
+    // cout<<atan2(2,2)*180/pi<<endl;
 
     for (auto& iris:priznak)
     {
         double pri[]={iris.dlinaChashelistnika,iris.shirinaChashelistnika,iris.dlinaLepestka,iris.shirinaLepestka};
         if(iris.type=="setosa")
         {
-            setosa.learn(pri,true,bias,0.3,0.7,0.001, func);
-            virginica.learn(pri,false,bias,0.3,0.7,0.001, func);
-            versicolor.learn(pri,false,bias,0.3,0.7,0.001, func);
+            setosa.learn(pri,true,bias,studySpeed,moment,error, func);
+            virginica.learn(pri,false,bias,studySpeed,moment,error, func);
+            versicolor.learn(pri,false,bias,studySpeed,moment,error, func);
         }
         if(iris.type=="virginica")
         {
-            setosa.learn(pri,false,bias,0.3,0.7,0.001, func);
-            virginica.learn(pri,true,bias,0.3,0.7,0.001, func);
-            versicolor.learn(pri,false,bias,0.3,0.7,0.001, func);
+            setosa.learn(pri,false,bias,studySpeed,moment,error, func);
+            virginica.learn(pri,true,bias,studySpeed,moment,error, func);
+            versicolor.learn(pri,false,bias,studySpeed,moment,error, func);
         }
         if(iris.type=="versicolor")
         {
-            setosa.learn(pri,false,bias,0.3,0.7,0.001, func);
-            virginica.learn(pri,false,bias,0.3,0.7,0.001, func);
-            versicolor.learn(pri,true,bias,0.3,0.7,0.001, func);
+            setosa.learn(pri,false,bias,studySpeed,moment,error, func);
+            virginica.learn(pri,false,bias,studySpeed,moment,error, func);
+            versicolor.learn(pri,true,bias,studySpeed,moment,error, func);
         }
     }
 

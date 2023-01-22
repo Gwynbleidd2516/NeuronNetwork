@@ -2,10 +2,10 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>U:\arrrr\NeuronNetwork\build\Debug\ZERO_CHECK</FullPath>
+      <FullPath>C:\Users\79219\my_project\NeuronNetwork\build\Debug\ZERO_CHECK</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>U:\arrrr\NeuronNetwork\bin\NeuronNetwork.exe</FullPath>
+      <FullPath>C:\Users\79219\my_project\NeuronNetwork\bin\NeuronNetwork.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

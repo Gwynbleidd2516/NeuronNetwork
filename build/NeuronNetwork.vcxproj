@@ -22,7 +22,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{4D88E7AD-37FD-3E00-8C30-F45D9F712BBB}</ProjectGuid>
+    <ProjectGuid>{A970D1C2-FD9A-3753-BD89-E2BE88F8237D}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
     <Platform>win32</Platform>
@@ -59,25 +59,25 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">U:\arrrr\NeuronNetwork\bin\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:\Users\79219\my_project\NeuronNetwork\bin\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">NeuronNetwork.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">NeuronNetwork</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|win32'">U:\arrrr\NeuronNetwork\bin\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:\Users\79219\my_project\NeuronNetwork\bin\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|win32'">NeuronNetwork.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|win32'">NeuronNetwork</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|win32'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|win32'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|win32'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">U:\arrrr\NeuronNetwork\bin\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">C:\Users\79219\my_project\NeuronNetwork\bin\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">NeuronNetwork.dir\MinSizeRel\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">NeuronNetwork</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">U:\arrrr\NeuronNetwork\bin\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">C:\Users\79219\my_project\NeuronNetwork\bin\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">NeuronNetwork.dir\RelWithDebInfo\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">NeuronNetwork</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">.exe</TargetExt>
@@ -117,8 +117,8 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>U:/arrrr/NeuronNetwork/build/Debug/NeuronNetwork.lib</ImportLibrary>
-      <ProgramDataBaseFile>U:/arrrr/NeuronNetwork/bin/NeuronNetwork.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/Users/79219/my_project/NeuronNetwork/build/Debug/NeuronNetwork.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/79219/my_project/NeuronNetwork/bin/NeuronNetwork.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -158,8 +158,8 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>U:/arrrr/NeuronNetwork/build/Release/NeuronNetwork.lib</ImportLibrary>
-      <ProgramDataBaseFile>U:/arrrr/NeuronNetwork/bin/NeuronNetwork.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/Users/79219/my_project/NeuronNetwork/build/Release/NeuronNetwork.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/79219/my_project/NeuronNetwork/bin/NeuronNetwork.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -199,8 +199,8 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>U:/arrrr/NeuronNetwork/build/MinSizeRel/NeuronNetwork.lib</ImportLibrary>
-      <ProgramDataBaseFile>U:/arrrr/NeuronNetwork/bin/NeuronNetwork.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/Users/79219/my_project/NeuronNetwork/build/MinSizeRel/NeuronNetwork.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/79219/my_project/NeuronNetwork/bin/NeuronNetwork.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -239,8 +239,8 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>U:/arrrr/NeuronNetwork/build/RelWithDebInfo/NeuronNetwork.lib</ImportLibrary>
-      <ProgramDataBaseFile>U:/arrrr/NeuronNetwork/bin/NeuronNetwork.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/Users/79219/my_project/NeuronNetwork/build/RelWithDebInfo/NeuronNetwork.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/79219/my_project/NeuronNetwork/bin/NeuronNetwork.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -248,11 +248,11 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="U:\arrrr\NeuronNetwork\CMakeLists.txt">
+    <CustomBuild Include="C:\Users\79219\my_project\NeuronNetwork\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">Building Custom Rule U:/arrrr/NeuronNetwork/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">Building Custom Rule C:/Users/79219/my_project/NeuronNetwork/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">setlocal
-"D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SU:/arrrr/NeuronNetwork -BU:/arrrr/NeuronNetwork/build --check-stamp-file U:/arrrr/NeuronNetwork/build/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/79219/my_project/NeuronNetwork -BC:/Users/79219/my_project/NeuronNetwork/build --check-stamp-file C:/Users/79219/my_project/NeuronNetwork/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -260,12 +260,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeCInformation.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeCXXInformation.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeCommonLanguageInclude.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeGenericSystem.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeInitializeConfigs.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeLanguageInformation.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeRCInformation.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInformation.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInitialize.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Compiler\MSVC-C.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Compiler\MSVC-CXX.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-C.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-CXX.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\Windows.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\WindowsPaths.cmake;U:\arrrr\NeuronNetwork\build\CMakeFiles\3.23.22060601-MSVC_2\CMakeCCompiler.cmake;U:\arrrr\NeuronNetwork\build\CMakeFiles\3.23.22060601-MSVC_2\CMakeCXXCompiler.cmake;U:\arrrr\NeuronNetwork\build\CMakeFiles\3.23.22060601-MSVC_2\CMakeRCCompiler.cmake;U:\arrrr\NeuronNetwork\build\CMakeFiles\3.23.22060601-MSVC_2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">U:\arrrr\NeuronNetwork\build\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\WindowsPaths.cmake;C:\Users\79219\my_project\NeuronNetwork\build\CMakeFiles\3.23.3\CMakeCCompiler.cmake;C:\Users\79219\my_project\NeuronNetwork\build\CMakeFiles\3.23.3\CMakeCXXCompiler.cmake;C:\Users\79219\my_project\NeuronNetwork\build\CMakeFiles\3.23.3\CMakeRCCompiler.cmake;C:\Users\79219\my_project\NeuronNetwork\build\CMakeFiles\3.23.3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:\Users\79219\my_project\NeuronNetwork\build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|win32'">Building Custom Rule U:/arrrr/NeuronNetwork/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|win32'">Building Custom Rule C:/Users/79219/my_project/NeuronNetwork/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|win32'">setlocal
-"D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SU:/arrrr/NeuronNetwork -BU:/arrrr/NeuronNetwork/build --check-stamp-file U:/arrrr/NeuronNetwork/build/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/79219/my_project/NeuronNetwork -BC:/Users/79219/my_project/NeuronNetwork/build --check-stamp-file C:/Users/79219/my_project/NeuronNetwork/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -273,12 +273,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|win32'">D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeCInformation.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeCXXInformation.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeCommonLanguageInclude.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeGenericSystem.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeInitializeConfigs.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeLanguageInformation.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeRCInformation.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInformation.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInitialize.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Compiler\MSVC-C.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Compiler\MSVC-CXX.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-C.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-CXX.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\Windows.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\WindowsPaths.cmake;U:\arrrr\NeuronNetwork\build\CMakeFiles\3.23.22060601-MSVC_2\CMakeCCompiler.cmake;U:\arrrr\NeuronNetwork\build\CMakeFiles\3.23.22060601-MSVC_2\CMakeCXXCompiler.cmake;U:\arrrr\NeuronNetwork\build\CMakeFiles\3.23.22060601-MSVC_2\CMakeRCCompiler.cmake;U:\arrrr\NeuronNetwork\build\CMakeFiles\3.23.22060601-MSVC_2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|win32'">U:\arrrr\NeuronNetwork\build\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\WindowsPaths.cmake;C:\Users\79219\my_project\NeuronNetwork\build\CMakeFiles\3.23.3\CMakeCCompiler.cmake;C:\Users\79219\my_project\NeuronNetwork\build\CMakeFiles\3.23.3\CMakeCXXCompiler.cmake;C:\Users\79219\my_project\NeuronNetwork\build\CMakeFiles\3.23.3\CMakeRCCompiler.cmake;C:\Users\79219\my_project\NeuronNetwork\build\CMakeFiles\3.23.3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:\Users\79219\my_project\NeuronNetwork\build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|win32'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">Building Custom Rule U:/arrrr/NeuronNetwork/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">Building Custom Rule C:/Users/79219/my_project/NeuronNetwork/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">setlocal
-"D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SU:/arrrr/NeuronNetwork -BU:/arrrr/NeuronNetwork/build --check-stamp-file U:/arrrr/NeuronNetwork/build/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/79219/my_project/NeuronNetwork -BC:/Users/79219/my_project/NeuronNetwork/build --check-stamp-file C:/Users/79219/my_project/NeuronNetwork/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -286,12 +286,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeCInformation.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeCXXInformation.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeCommonLanguageInclude.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeGenericSystem.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeInitializeConfigs.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeLanguageInformation.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeRCInformation.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInformation.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInitialize.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Compiler\MSVC-C.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Compiler\MSVC-CXX.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-C.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-CXX.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\Windows.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\WindowsPaths.cmake;U:\arrrr\NeuronNetwork\build\CMakeFiles\3.23.22060601-MSVC_2\CMakeCCompiler.cmake;U:\arrrr\NeuronNetwork\build\CMakeFiles\3.23.22060601-MSVC_2\CMakeCXXCompiler.cmake;U:\arrrr\NeuronNetwork\build\CMakeFiles\3.23.22060601-MSVC_2\CMakeRCCompiler.cmake;U:\arrrr\NeuronNetwork\build\CMakeFiles\3.23.22060601-MSVC_2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">U:\arrrr\NeuronNetwork\build\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\WindowsPaths.cmake;C:\Users\79219\my_project\NeuronNetwork\build\CMakeFiles\3.23.3\CMakeCCompiler.cmake;C:\Users\79219\my_project\NeuronNetwork\build\CMakeFiles\3.23.3\CMakeCXXCompiler.cmake;C:\Users\79219\my_project\NeuronNetwork\build\CMakeFiles\3.23.3\CMakeRCCompiler.cmake;C:\Users\79219\my_project\NeuronNetwork\build\CMakeFiles\3.23.3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">C:\Users\79219\my_project\NeuronNetwork\build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">Building Custom Rule U:/arrrr/NeuronNetwork/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">Building Custom Rule C:/Users/79219/my_project/NeuronNetwork/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">setlocal
-"D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SU:/arrrr/NeuronNetwork -BU:/arrrr/NeuronNetwork/build --check-stamp-file U:/arrrr/NeuronNetwork/build/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/79219/my_project/NeuronNetwork -BC:/Users/79219/my_project/NeuronNetwork/build --check-stamp-file C:/Users/79219/my_project/NeuronNetwork/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -299,19 +299,19 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeCInformation.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeCXXInformation.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeCommonLanguageInclude.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeGenericSystem.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeInitializeConfigs.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeLanguageInformation.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeRCInformation.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInformation.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInitialize.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Compiler\MSVC-C.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Compiler\MSVC-CXX.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-C.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-CXX.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\Windows.cmake;D:\MVS\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.23\Modules\Platform\WindowsPaths.cmake;U:\arrrr\NeuronNetwork\build\CMakeFiles\3.23.22060601-MSVC_2\CMakeCCompiler.cmake;U:\arrrr\NeuronNetwork\build\CMakeFiles\3.23.22060601-MSVC_2\CMakeCXXCompiler.cmake;U:\arrrr\NeuronNetwork\build\CMakeFiles\3.23.22060601-MSVC_2\CMakeRCCompiler.cmake;U:\arrrr\NeuronNetwork\build\CMakeFiles\3.23.22060601-MSVC_2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">U:\arrrr\NeuronNetwork\build\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.23\Modules\Platform\WindowsPaths.cmake;C:\Users\79219\my_project\NeuronNetwork\build\CMakeFiles\3.23.3\CMakeCCompiler.cmake;C:\Users\79219\my_project\NeuronNetwork\build\CMakeFiles\3.23.3\CMakeCXXCompiler.cmake;C:\Users\79219\my_project\NeuronNetwork\build\CMakeFiles\3.23.3\CMakeRCCompiler.cmake;C:\Users\79219\my_project\NeuronNetwork\build\CMakeFiles\3.23.3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">C:\Users\79219\my_project\NeuronNetwork\build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="U:\arrrr\NeuronNetwork\src\main.cpp" />
-    <ClCompile Include="U:\arrrr\NeuronNetwork\src\Neuron.cpp" />
-    <ClCompile Include="U:\arrrr\NeuronNetwork\src\NeuronNetwork.cpp" />
+    <ClCompile Include="C:\Users\79219\my_project\NeuronNetwork\src\main.cpp" />
+    <ClCompile Include="C:\Users\79219\my_project\NeuronNetwork\src\Neuron.cpp" />
+    <ClCompile Include="C:\Users\79219\my_project\NeuronNetwork\src\NeuronNetwork.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="U:\arrrr\NeuronNetwork\build\ZERO_CHECK.vcxproj">
-      <Project>{0AEB6D03-2795-30BE-8CA2-0E840F6BABDD}</Project>
+    <ProjectReference Include="C:\Users\79219\my_project\NeuronNetwork\build\ZERO_CHECK.vcxproj">
+      <Project>{F583D800-F8A5-306F-A5D4-A2DE26D2F203}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

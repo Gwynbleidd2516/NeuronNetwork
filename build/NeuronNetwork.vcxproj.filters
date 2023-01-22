@@ -1,22 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="U:\arrrr\NeuronNetwork\src\main.cpp">
+    <ClCompile Include="C:\Users\79219\my_project\NeuronNetwork\src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="U:\arrrr\NeuronNetwork\src\Neuron.cpp">
+    <ClCompile Include="C:\Users\79219\my_project\NeuronNetwork\src\Neuron.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="U:\arrrr\NeuronNetwork\src\NeuronNetwork.cpp">
+    <ClCompile Include="C:\Users\79219\my_project\NeuronNetwork\src\NeuronNetwork.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="U:\arrrr\NeuronNetwork\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\79219\my_project\NeuronNetwork\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{3727C143-AE55-39F7-9778-63B0DE617533}</UniqueIdentifier>
+      <UniqueIdentifier>{66A121CA-F73E-31D6-A2BE-A42A4B0F4D35}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
