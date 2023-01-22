@@ -333,7 +333,7 @@ void NeuronNetwork::setNeuronNetwork(int inputDataCapasity, int layer1Capasity)
 	for(auto& x:deltaSinopsOutput) x=0;
 }
 
-void NeuronNetwork::learn(double inputData[], bool outputData, bool bias, double studySpeed, double moment, double min_error, Neuron::Function func)
+void NeuronNetwork::learn(double inputData[], bool outputData, bool bias, double studySpeed, double moment, double min_error, int k, Neuron::Function func)
 {
 	for(int i=0;i<this->inputData.size();i++)
 	{
@@ -345,11 +345,15 @@ void NeuronNetwork::learn(double inputData[], bool outputData, bool bias, double
 	vector<double> GRAD3;
 	vector<double> GRADOut;
 
-	bool answer;
+	float error=0;
+	
+	float epoch=1;
+	for (int i = 0; i < k; i++)
+	{
+	
 	
 	do
 	{
-		error=0;
 		int index=0;
 		for (int i = 0; i < layer1.size(); i++) 
 		{
@@ -416,10 +420,11 @@ void NeuronNetwork::learn(double inputData[], bool outputData, bool bias, double
 		}
 		if(write) outputNeuron.setValue(sparametr,func);
 		write=false;
-
-		answer=outputNeuron.getActivatedValue()>=0.5;
 		
-		error=pow(outputData-answer,2);
+		if(func==Neuron::SIGM)
+			error=outputData-outputNeuron.getActivatedValue();
+		else if(func==Neuron::TAHN)
+			error=1-pow(atan(outputData-outputNeuron.getActivatedValue()),2);
 
 		// GRADout calculation
 		bool grad=false;
@@ -517,9 +522,11 @@ void NeuronNetwork::learn(double inputData[], bool outputData, bool bias, double
 			g++;
 		}
 
-		answer=outputNeuron.getActivatedValue()>=0.5;
-
-		error=pow(outputData-answer,2);
+		
+		if(func==Neuron::SIGM)
+			error=outputData-outputNeuron.getActivatedValue();
+		else if(func==Neuron::TAHN)
+			error=1-pow(atan(outputData-outputNeuron.getActivatedValue()),2);
 
 		cout<<outputNeuron.getActivatedValue()<<endl;
 		
@@ -530,7 +537,8 @@ void NeuronNetwork::learn(double inputData[], bool outputData, bool bias, double
 		GRAD2.clear();
 		GRAD3.clear();
 		GRADOut.clear();
-	} while (error>=min_error);
+	} while (pow(error,2)>=min_error);
+	}
 }
 
 
@@ -659,5 +667,5 @@ double NeuronNetwork::run(double inputData[], Neuron::Function func)
 	if(write) outputNeuron.setValue(sparametr,func);
 	write =false;
 
-	return outputNeuron.getActivatedValue()>=0.5;
+	return outputNeuron.getActivatedValue();
 }
