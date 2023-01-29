@@ -2,6 +2,7 @@
 #include<vector>
 #include"Neuron.h"
 #include"NeuronNetwork.h"
+#include"PerceptronLayer.h"
 #include<iostream>
 #include<string>
 #include<fstream>
@@ -189,19 +190,29 @@ int main()
     // Neuron::Function func=Neuron::SIGM;
     // double studySpeed=0.1,moment=0.9,error=0.01;
 
+    // // double pi = 3.1415926535;
+    // // cout<<atan(tan(45*pi/180))*180/pi<<endl;
+    // // cout<<atan2(2,2)*180/pi<<endl;
+
     // for (auto& iris:priznak)
     // {
     //     double pri[]={iris.dlinaChashelistnika,iris.shirinaChashelistnika,iris.dlinaLepestka,iris.shirinaLepestka};
     //     if(iris.type=="setosa")
     //     {
     //         setosa.learn(pri,true,bias,studySpeed,moment,error, func);
+    //         virginica.learn(pri,false,bias,studySpeed,moment,error, func);
+    //         versicolor.learn(pri,false,bias,studySpeed,moment,error, func);
     //     }
     //     if(iris.type=="virginica")
     //     {
+    //         setosa.learn(pri,false,bias,studySpeed,moment,error, func);
     //         virginica.learn(pri,true,bias,studySpeed,moment,error, func);
+    //         versicolor.learn(pri,false,bias,studySpeed,moment,error, func);
     //     }
     //     if(iris.type=="versicolor")
     //     {
+    //         setosa.learn(pri,false,bias,studySpeed,moment,error, func);
+    //         virginica.learn(pri,false,bias,studySpeed,moment,error, func);
     //         versicolor.learn(pri,true,bias,studySpeed,moment,error, func);
     //     }
     // }
@@ -216,4 +227,105 @@ int main()
     // }
 
     // cout<<setosa.run(pri, func)<<endl<<virginica.run(pri, func)<<endl<<versicolor.run(pri, func);
+
+    PerceptronLayer a(1);
+    vector<double> vec(1);
+    for(auto& x:vec)
+    {
+        x=0;
+    }
+    vec[0]=1;
+    a.setLearningSpeed(0.3);
+    while (a.getError(1)>=0.01)
+    {
+        a.construct(vec);
+        a.learn(1);
+    }
+    vec[0]=0;
+    a.construct(vec);
+    cout<<a.getOutPut()<<endl<<a.getError(1)<<endl;
+    for(auto& x:a.getWeights())
+    {
+        cout<<x<<endl;
+    }
+
+    // PerceptronLayer setosa(4);
+    // PerceptronLayer virginica(4);
+    // PerceptronLayer versicolor(4);
+    // double studySpeed=0.3;
+    // double error=0.000001;
+    // setosa.setLearningSpeed(studySpeed);
+    // virginica.setLearningSpeed(studySpeed);
+    // versicolor.setLearningSpeed(studySpeed);
+
+    // for(auto& iris:priznak)
+    // {
+    //     vector<double> pri={iris.dlinaChashelistnika,iris.shirinaChashelistnika,iris.dlinaLepestka,iris.shirinaLepestka};
+    //     if(iris.type=="setosa")
+    //     {
+    //         while (setosa.getError(1)!=error)
+    //         {
+    //             setosa.construct(pri);
+    //             setosa.learn(1);
+    //         }
+    //         while (virginica.getError(0)!=error)
+    //         {
+    //             virginica.construct(pri);
+    //             virginica.learn(0);
+    //         }
+    //         while (versicolor.getError(0)!=error)
+    //         {
+    //             versicolor.construct(pri);
+    //             versicolor.learn(0);
+    //         }
+    //     }
+
+    //     if(iris.type=="virginica")
+    //     {
+    //         while (setosa.getError(0)!=error)
+    //         {
+    //             setosa.construct(pri);
+    //             setosa.learn(0);
+    //         }
+    //         while (virginica.getError(1)!=error)
+    //         {
+    //             virginica.construct(pri);
+    //             virginica.learn(1);
+    //         }
+    //         while (versicolor.getError(0)!=error)
+    //         {
+    //             versicolor.construct(pri);
+    //             versicolor.learn(0);
+    //         }
+    //     }
+
+    //     if(iris.type=="versicolor")
+    //     {
+    //         while (setosa.getError(0)!=error)
+    //         {
+    //             setosa.construct(pri);
+    //             setosa.learn(0);
+    //         }
+    //         while (virginica.getError(0)!=error)
+    //         {
+    //             virginica.construct(pri);
+    //             virginica.learn(0);
+    //         }
+    //         while (versicolor.getError(1)!=error)
+    //         {
+    //             versicolor.construct(pri);
+    //             versicolor.learn(1);
+    //         }
+    //     }
+    // }
+    
+    // vector<double> vec(4);
+    // for(auto& x:vec)
+    // {
+    //     cin>>x;
+    // }
+    // setosa.construct(vec);
+    // virginica.construct(vec);
+    // versicolor.construct(vec);
+    // cout<<setosa.getOutPut()<<endl<<virginica.getOutPut()<<endl<<versicolor.getOutPut();
 }
