@@ -91,14 +91,23 @@ int main()
     // }
 
 
-    // NeuronNetwork gorisontal(9,5,2,1);
-    // NeuronNetwork vertical(9,5,2,1);
-    // gorisontal.loadFromFile("brain1.txt");
-    // vertical.loadFromFile("brain2.txt");
+    // NeuronNetwork col11(9,5,2,1);
+    // NeuronNetwork cols[6];
+    // for (auto& x:cols)
+    // {
+    //     x.setNeuronNetwork(9,5,2,1);
+    // }
+    // bool ans[6];
+    // // gorisontal.loadFromFile("brain1.txt");
+    // // vertical.loadFromFile("brain2.txt");
 
     // while (true)
     // {   
-    
+    //     cout<<"end?\n";
+    //     string g;
+    //     cin>>g;
+    //     if(g=="y") break;
+
     //     double field[9];
     //     for(int x=0;x<9;x++)
     //     {
@@ -106,18 +115,17 @@ int main()
     //     }
         
 
-    //     double gor,ver;
-    //     cin>>gor>>ver;
+    //     for(auto& x:ans)
+    //     {
+    //         cin>>x;
+    //     }
+        
 
-    //     if(gor==-1 || ver==-1) break;
-    //     gorisontal.learn(field,gor,true,0.7,0.3,0.0001);
-    //     gorisontal.saveResults("brain1.txt");
-    //     gorisontal.learn(field,gor,true,0.7,0.3,0.0001);
-    //     gorisontal.saveResults("brain1.txt");
-    //     vertical.learn(field,ver,true,0.7,0.3,0.0001);
-    //     vertical.saveResults("brain2.txt");
-    //     vertical.learn(field,ver,true,0.7,0.3,0.0001);
-    //     vertical.saveResults("brain2.txt");
+    //     for (int i = 0; i < 6; i++)
+    //     {
+    //         cols[i].learn(field,ans[i],true,0.3,0.7,0.01,1000);
+    //     }
+        
     // }
 
     // double field[9];
@@ -126,15 +134,16 @@ int main()
     //     cin>>field[x];
     // }
 
-    // gorisontal.loadFromFile("brain1.txt");
-    // vertical.loadFromFile("brain2.txt");
-    // cout<<gorisontal.run(field)<<"\t"<<vertical.run(field);
+    // for (auto& x:cols)
+    // {
+    //     cout<<x.run(field)<<endl;
+    // }
 
     // NeuronNetwork a(2,2);
     // double b[2];
     // b[0]=1;
     // b[1]=0;
-    // a.learn(b,false,true,0.7,0.3,0.01);
+    // a.learn(b,false,true,0.7,0.3,0.01,10);
     // cout<<a.run(b);
 
     // Neuron a(1),b;
@@ -145,34 +154,34 @@ int main()
     // cout<<0.7*grad<<endl;
     // cout<<sinops+0.7*grad;
 
-    // NeuronNetwork ab(1,1);
-    // double x[]={1};
-    // ab.learn(x,0,false,0.3,0.7,0.01);
-    // double l[]={45};
-    // cout<<ab.run(l);
+    NeuronNetwork ab(1,1,1);
+    double x[]={1};
+    ab.learn(x,1,true,0.1,0.7,0.001,10000,Neuron::SIGM);
+    double l[]={0};
+    cout<<ab.run(l);
 
-    vector<Iris> priznak;
-    ifstream file;
-    file.open("iris.txt");
-    while (!file.eof())
-    {
-        string buffer="";
-        Iris iris;
-        getline(file,buffer);
-        iris.dlinaChashelistnika=stod(buffer);
-        getline(file,buffer);
-        iris.shirinaChashelistnika=stod(buffer);
-        getline(file,buffer);
-        iris.dlinaLepestka=stod(buffer);
-        getline(file,buffer);
-        iris.shirinaLepestka=stod(buffer);
-        getline(file,buffer);
-        iris.type=buffer;
-        priznak.push_back(iris);
-        getline(file,buffer);
-        getline(file,buffer);
-    }
-    file.close();
+    // vector<Iris> priznak;
+    // ifstream file;
+    // file.open("iris.txt");
+    // while (!file.eof())
+    // {
+    //     string buffer="";
+    //     Iris iris;
+    //     getline(file,buffer);
+    //     iris.dlinaChashelistnika=stod(buffer);
+    //     getline(file,buffer);
+    //     iris.shirinaChashelistnika=stod(buffer);
+    //     getline(file,buffer);
+    //     iris.dlinaLepestka=stod(buffer);
+    //     getline(file,buffer);
+    //     iris.shirinaLepestka=stod(buffer);
+    //     getline(file,buffer);
+    //     iris.type=buffer;
+    //     priznak.push_back(iris);
+    //     getline(file,buffer);
+    //     getline(file,buffer);
+    // }
+    // file.close();
 
     // NeuronNetwork setosa(4,10);
     // NeuronNetwork virginica(4,10);

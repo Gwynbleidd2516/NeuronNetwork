@@ -48,7 +48,7 @@ public:
 
 	void setNeuronNetwork(int inputDataCapasity, int layer1Capasity);
 
-	void learn(double inputData[], bool outputData, bool Bias, double studySpeed, double moment, double min_error, Neuron::Function func = Neuron::SIGM);
+	void learn(double inputData[], bool outputData, bool Bias, double studySpeed, double moment, double min_error, int k, Neuron::Function func = Neuron::SIGM);
 
 	void saveResults(string path);
 
