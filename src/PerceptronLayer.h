@@ -1,34 +1,26 @@
 #pragma once
 
+#include<iostream>
+#include<math.h>
 #include<vector>
+#include<string>
+#include<fstream>
 using namespace std;
+#include"Perceptron.h"
 
 class PerceptronLayer
 {
 private:
-    double activationFunction(double value);
-    double deactivationFunction(double value);
-
-    double summ;
-    vector<double> weights;
-    vector<double> exInputs;
-    double learningSpeed;
+    vector<Perceptron> layers;
+    double error;
+    double studySpeed;
     double bias;
-
 public:
-    PerceptronLayer(int capasity);
+    PerceptronLayer(int inputCpasity, int layerCapasity, double studySpeed=0.3);
 
-    void setPerceptronLayer(int capasity);
+    double getError();
+	
+    double construct(const vector<double>& parametrs);
 
-    void setLearningSpeed(double speed);
-
-    double construct(const vector<double>& args);
-
-    void learn(double answer);
-
-    double getOutPut();
-
-    double getError(double answear);
-
-    const vector<double> getWeights();
+    double learn(double answear);
 };
