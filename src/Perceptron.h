@@ -16,6 +16,7 @@ private:
     vector<double> exInputs;
     double learningSpeed;
     double bias;
+    vector<double> errors;
 
 public:
     Perceptron(int capasity);
@@ -30,9 +31,13 @@ public:
 
     void learn(double answer);
 
+    void learnWithError(double error);
+
     const double getOutPut();
 
     const double getError(double answear);
+
+    const vector<double> getError();
 
     const vector<double> getWeights();
 

@@ -4,6 +4,7 @@
 Perceptron::Perceptron(int capasity)
 {
     weights.resize(capasity);
+    errors.resize(capasity);
     for(auto& x : weights)
     {
         x=(rand()%1000-500)/1000.0;
@@ -14,6 +15,7 @@ Perceptron::Perceptron(int capasity)
 void Perceptron::setPerceptron(int capasity)
 {
     weights.resize(capasity);
+    errors.resize(capasity);
     for(auto& x : weights)
     {
         x=(rand()%1000-500)/1000.0;
@@ -42,8 +44,27 @@ void Perceptron::learn(double answear)
     for (int i = 0; i < weights.size(); i++)
     {
         weights[i]+=learningSpeed*teta*exInputs[i];
+        errors[i]=weights[i]*teta;
+    }
+    
+    bias+=learningSpeed*teta;
+}
+
+void Perceptron::learnWithError(double error)
+{
+    double teta=error*deactivationFunction(summ);
+
+    for (int i = 0; i < weights.size(); i++)
+    {
+        weights[i]+=learningSpeed*teta*exInputs[i];
+        errors[i]=weights[i]*teta;
     }
     bias+=learningSpeed*teta;
+}
+
+const vector<double> Perceptron::getError()
+{
+    return errors;
 }
 
 double Perceptron::activationFunction(double value)

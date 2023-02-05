@@ -8,6 +8,7 @@
 #include<iostream>
 #include<string>
 #include<fstream>
+#include<thread>
 #include"MNIST.h"
 using namespace std;
 
@@ -204,149 +205,28 @@ int main()
 	// ab.learn(1, 0.1);
 	// cout<<ab.construct(in)<<endl;
 
-	// MNIST test(TRAIN_IMAGE_FILE, TRAIN_LABELS_FILE);
-	// test.read(60000);
-	
-	// vector<Perceptron> nums(10);
-	// for (auto& x:nums)
-	// {
-	// 	x.setPerceptron(784);
-	// 	x.setLearningSpeed(0.3);
-	// }
-	// vector<vector<double>> teach(60000, vector<double>(0));
-
-
-	// vector<double> ans;
-	// for (int i = 0; i < 60000; i++)
-	// {
-	// 	ans.push_back(test.getLabel(i));
-	// }
-	
-
-	// vector<vector<double>> answears;
-	// answears.resize(60000, vector<double>(10));
-	// for (int i = 0; i < ans.size(); i++)
-	// {
-	// 	for(auto& x:answears[i])
-	// 	{
-	// 		x=0;
-	// 	}
-	// 	answears[i][ans[i]]=1;
-	// }
-	
-	// for (int i = 0; i < 60000; i++)
-	// {
-	// 	for (auto& x:test.getTest(i))
-	// 	{
-	// 		teach[i].push_back((double)x/255);
-	// 	}
-	// }
-
-	// int error = 0;
-	// do
-	// {
-	// 	error = 0;  
-	// 	for (int j = 0; j < 60000; j++)
-	// 	{
-	// 		for (int i = 0; i < nums.size(); i++)
-	// 		{
-	// 			nums[i].construct(teach[j]);
-	// 			nums[i].learn(answears[j][i]);
-
-	// 			cout<<nums[i].getError(answears[j][i])<< "  "<<j<<endl;
-	// 			error += nums[i].getError(answears[j][i]);
-	// 		}
-	// 		std::cout << endl;
-	// 	}
-	// }
-	// while (std::abs(error)>=0.0001);
-
-    // for (int i = 0; i < nums.size(); i++)
-	// {
-	// 	saveWeights("brain"+to_string(i), nums[i]);
-	// }
-
-
-    // // vector<Perceptron> nums(10);
-    // // for (int i = 0; i < 10; i++)
-    // // {
-    // //     nums[i].setPerceptron(784);
-    // //     nums[i].loadWieghts("brain"+to_string(i));
-    // // }
-    
-	// MNIST train(TEST_IMAGE_FILE, TEST_LABELS_FILE);
-	// train.read(10000);
-	
-	// vector<vector<double>> teach1(10000, vector<double>(0));
-
-
-	// vector<double> ans1;
-	// for (int i = 0; i < 10000; i++)
-	// {
-	// 	ans1.push_back(train.getLabel(i));
-	// }
-	
-
-	// vector<vector<double>> answears1;
-	// answears1.resize(10000, vector<double>(10));
-	// for (int i = 0; i < ans1.size(); i++)
-	// {
-	// 	for(auto& x:answears1[i])
-	// 	{
-	// 		x=0;
-	// 	}
-	// 	answears1[i][ans1[i]]=1;
-	// }
-	
-	// for (int i = 0; i < 10000; i++)
-	// {
-	// 	for (auto& x:train.getTest(i))
-	// 	{
-	// 		teach1[i].push_back((double)x/255);
-	// 	}
-	// }
-
-	// int result=0;
-	
-    // for (int j = 0; j < 10000; j++)
-    // {
-	// 	vector<double> anse;
-	// 	for(auto& x:nums)
-	// 	{
-	// 		x.construct(teach1[j]);
-	// 		anse.push_back(x.getOutPut());
-	// 	}
-		
-	// 	// for(auto& x:answears1[j])
-	// 	// {
-	// 	// 	cout<<x<<" ";
-	// 	// }
-	// 	// cout<<endl;
-	// 	// for(auto& x:nums)
-	// 	// {
-	// 	// 	cout<<x.getOutPut()<<" ";
-	// 	// }
-	// 	// cout<<endl;
-
-	// 	auto num=max_element(anse.begin(), anse.end())-anse.begin();
-	// 	auto br=max_element(answears1[j].begin(), answears1[j].end())-answears1[j].begin();
-	// 	cout<<num<<" "<<br<<endl;
-	// 	if (num==br) result++;
-	// }
-	// cout<<result;
-
+	int capasity=10000;
 	MNIST test(TRAIN_IMAGE_FILE, TRAIN_LABELS_FILE);
-	test.read(60000);
+	test.read(capasity);
+	
+	vector<Perceptron> nums(10);
+	for (auto& x:nums)
+	{
+		x.setPerceptron(784);
+		x.setLearningSpeed(0.3);
+	}
+	vector<vector<double>> teach(capasity, vector<double>(0));
+
 
 	vector<double> ans;
-	for (int i = 0; i < 60000; i++)
+	for (int i = 0; i < capasity; i++)
 	{
 		ans.push_back(test.getLabel(i));
 	}
 	
-	vector<vector<double>> teach(60000, vector<double>(0));
+
 	vector<vector<double>> answears;
-	answears.resize(60000, vector<double>(10));
+	answears.resize(capasity, vector<double>(10));
 	for (int i = 0; i < ans.size(); i++)
 	{
 		for(auto& x:answears[i])
@@ -356,7 +236,7 @@ int main()
 		answears[i][ans[i]]=1;
 	}
 	
-	for (int i = 0; i < 60000; i++)
+	for (int i = 0; i < capasity; i++)
 	{
 		for (auto& x:test.getTest(i))
 		{
@@ -364,24 +244,30 @@ int main()
 		}
 	}
 
-	vector<PerceptronLayer> neur(10);
-	for(auto& x:neur)
+	double error = 0;
+	do
 	{
-		x.setPerceptronLayer(784, 11);
-	}
-
-	for (int j = 0; j < 60000; j++)
-	{
-		for (int i = 0; i < neur.size(); i++)
+		error = 0;  
+		for (int j = 0; j < capasity; j++)
 		{
-			neur[i].construct(teach[j]);
-			neur[i].learn(answears[j][i], 0.01);
+			for (int i = 0; i < nums.size(); i++)
+			{
+				nums[i].construct(teach[j]);
+				nums[i].learn(answears[j][i]);
+				error += abs(nums[i].getError(answears[j][i]));
 
-			cout<<neur[i].getError(answears[j][i])<< "  "<<j<<endl;			
+				cout<<error<< "  "<<j<<endl;
+			}
+			std::cout << endl;
 		}
-		std::cout << endl;
 	}
-	
+	while (std::abs(error)>=0.0001);
+
+    for (int i = 0; i < nums.size(); i++)
+	{
+		saveWeights("brain"+to_string(i), nums[i]);
+	}
+
 
     // vector<Perceptron> nums(10);
     // for (int i = 0; i < 10; i++)
@@ -389,6 +275,135 @@ int main()
     //     nums[i].setPerceptron(784);
     //     nums[i].loadWieghts("brain"+to_string(i));
     // }
+    
+	MNIST train(TEST_IMAGE_FILE, TEST_LABELS_FILE);
+	train.read(10000);
+	
+	vector<vector<double>> teach1(10000, vector<double>(0));
+
+
+	vector<double> ans1;
+	for (int i = 0; i < 10000; i++)
+	{
+		ans1.push_back(train.getLabel(i));
+	}
+	
+
+	vector<vector<double>> answears1;
+	answears1.resize(10000, vector<double>(10));
+	for (int i = 0; i < ans1.size(); i++)
+	{
+		for(auto& x:answears1[i])
+		{
+			x=0;
+		}
+		answears1[i][ans1[i]]=1;
+	}
+	
+	for (int i = 0; i < 10000; i++)
+	{
+		for (auto& x:train.getTest(i))
+		{
+			teach1[i].push_back((double)x/255);
+		}
+	}
+
+	int result=0;
+	
+    for (int j = 0; j < 10000; j++)
+    {
+		vector<double> anse;
+		for(auto& x:nums)
+		{
+			x.construct(teach1[j]);
+			anse.push_back(x.getOutPut());
+		}
+		
+		// for(auto& x:answears1[j])
+		// {
+		// 	cout<<x<<" ";
+		// }
+		// cout<<endl;
+		// for(auto& x:nums)
+		// {
+		// 	cout<<x.getOutPut()<<" ";
+		// }
+		// cout<<endl;
+
+		auto num=max_element(anse.begin(), anse.end())-anse.begin();
+		auto br=max_element(answears1[j].begin(), answears1[j].end())-answears1[j].begin();
+		cout<<num<<" "<<br<<endl;
+		if (num==br) result++;
+	}
+	cout<<result;
+
+	// PerceptronLayer a(7,3);
+	// vector<double> aans(784);
+	// for (auto& x: aans)
+	// {
+	// 	x=0;
+	// }
+	// aans[2]=1;
+	// a.learn(1,0.01);
+	// cout<<a.construct(aans);
+
+	// int capasity=1;
+
+	// MNIST test(TRAIN_IMAGE_FILE, TRAIN_LABELS_FILE);
+	// test.read(capasity);
+
+	// vector<double> ans;
+	// for (int i = 0; i < capasity; i++)
+	// {
+	// 	ans.push_back(test.getLabel(i));
+	// }
+	
+	// vector<vector<double>> teach(capasity, vector<double>(0));
+	// vector<vector<double>> answears;
+	// answears.resize(capasity, vector<double>(10));
+	// for (int i = 0; i < ans.size(); i++)
+	// {
+	// 	for(auto& x:answears[i])
+	// 	{
+	// 		x=0;
+	// 	}
+	// 	answears[i][ans[i]]=1;
+	// }
+	
+	// for (int i = 0; i < capasity; i++)
+	// {
+	// 	for (auto& x:test.getTest(i))
+	// 	{
+	// 		teach[i].push_back((double)x/255);
+	// 	}
+	// }
+
+	// vector<PerceptronLayer> neur(10);
+	// for(auto& x:neur)
+	// {
+	// 	x.setPerceptronLayer(784, 3);
+	// }
+
+	// vector<thread> threads(10);
+	// for (int j = 0; j < capasity; j++)
+	// {
+	// 	for (int i = 0; i < neur.size(); i++)
+	// 	{
+	// 		neur[i].construct(teach[j]);
+	// 	}
+	// 	for (int i = 0; i < neur.size(); i++)
+	// 	{
+	// 		// threads[i]=thread::thread(&PerceptronLayer::learn, neur[i], answears[j][i], 0.01);
+	// 		// neur[i].construct(teach[j]);
+	// 		neur[i].learn(answears[j][i], 0.01);
+	// 	}
+	// 	// for(auto& x:threads)
+	// 	// {
+	// 	// 	x.join();
+	// 	// }
+	// 	std::cout <<((double)j/capasity)*100<<" %"<< endl;
+	// }
+	
     
 	// MNIST train(TEST_IMAGE_FILE, TEST_LABELS_FILE);
 	// train.read(10000);
@@ -427,22 +442,11 @@ int main()
     // for (int j = 0; j < 10000; j++)
     // {
 	// 	vector<double> anse;
-	// 	for(auto& x:nums)
+	// 	for(auto& x:neur)
 	// 	{
 	// 		x.construct(teach1[j]);
-	// 		anse.push_back(x.getOutPut());
+	// 		anse.push_back(x.construct(teach1[j]));
 	// 	}
-		
-	// 	// for(auto& x:answears1[j])
-	// 	// {
-	// 	// 	cout<<x<<" ";
-	// 	// }
-	// 	// cout<<endl;
-	// 	// for(auto& x:nums)
-	// 	// {
-	// 	// 	cout<<x.getOutPut()<<" ";
-	// 	// }
-	// 	// cout<<endl;
 
 	// 	auto num=max_element(anse.begin(), anse.end())-anse.begin();
 	// 	auto br=max_element(answears1[j].begin(), answears1[j].end())-answears1[j].begin();
