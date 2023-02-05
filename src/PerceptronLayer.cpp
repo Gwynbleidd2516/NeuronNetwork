@@ -1,76 +1,131 @@
 #include"PerceptronLayer.h"
 
-PerceptronLayer::PerceptronLayer(int capasity)
+PerceptronLayer::PerceptronLayer(int inputCpasity, int layerCapasity, double studySpeed)
 {
-    weights.resize(capasity);
-    for(auto& x : weights)
+    this->studySpeed=studySpeed;
+    layer.resize(layerCapasity, vector<Perceptron>(inputCpasity));
+    neuronsCapasity.resize(layerCapasity);
+    neuronsCapasity[0]=inputCpasity;
+    neuronsCapasity[neuronsCapasity.size()-1]=1;
+    for (int i = 1; i < neuronsCapasity.size()-1; i++)
     {
-        x=(rand()%1000-500)/1000.0;
+        if(neuronsCapasity[i-1]%2==0)
+        {
+            neuronsCapasity[i]=neuronsCapasity[i-1]/2;
+        }
+        else if(neuronsCapasity[i-1]%3==0)
+        {
+            neuronsCapasity[i]=neuronsCapasity[i-1]/3;
+        }
+        else
+        {
+            neuronsCapasity[i]=(neuronsCapasity[i-1]+1)/2;
+        }
     }
-    bias=(rand()%1000-500)/1000.0;
-}
-
-void PerceptronLayer::setPerceptronLayer(int capasity)
-{
-    weights.resize(capasity);
-    for(auto& x : weights)
+    
+    for(auto& x:layer[0])
     {
-        x=(rand()%1000-500)/1000.0;
+        x.setPerceptron(1);
+        x.setLearningSpeed(studySpeed);
     }
-    bias=(rand()%1000-500)/1000.0;
-}
 
-double PerceptronLayer::construct(const vector<double>& args)
-{
-    exInputs=args;
-    summ=0;
-
-    for (int i = 0; i < weights.size(); i++)
+    for (int layerNum = 1; layerNum < layerCapasity; layerNum++)
     {
-        summ+=args[i]*weights[i];
-    }
-    summ+=bias;
-    return activationFunction(summ);
+        for (int neur = 0; neur < neuronsCapasity[layerNum]; neur++)
+        {
+            layer[layerNum][neur].setPerceptron(neuronsCapasity[layerNum-1]);
+            layer[layerNum][neur].setLearningSpeed(studySpeed);
+        }       
+    }    
 }
 
-void PerceptronLayer::learn(double answear)
+void PerceptronLayer::setPerceptronLayer(int inputCpasity, int layerCapasity, double studySpeed)
 {
-    double error=answear-activationFunction(summ);
-    double teta=error*deactivationFunction(summ);
-
-    for (int i = 0; i < weights.size(); i++)
+    this->studySpeed=studySpeed;
+    layer.resize(layerCapasity, vector<Perceptron>(inputCpasity));
+    neuronsCapasity.resize(layerCapasity);
+    neuronsCapasity[0]=inputCpasity;
+    neuronsCapasity[neuronsCapasity.size()-1]=1;
+    for (int i = 1; i < neuronsCapasity.size()-1; i++)
     {
-        weights[i]+=learningSpeed*teta*exInputs[i];
+        if(neuronsCapasity[i-1]%2==0)
+        {
+            neuronsCapasity[i]=neuronsCapasity[i-1]/2;
+        }
+        else if(neuronsCapasity[i-1]%3==0)
+        {
+            neuronsCapasity[i]=neuronsCapasity[i-1]/3;
+        }
+        else
+        {
+            neuronsCapasity[i]=(neuronsCapasity[i-1]+1)/2;
+        }
     }
-    bias+=learningSpeed*teta;
+    
+    for(auto& x:layer[0])
+    {
+        x.setPerceptron(1);
+        x.setLearningSpeed(studySpeed);
+    }
+
+    for (int layerNum = 1; layerNum < layerCapasity; layerNum++)
+    {
+        for (int neur = 0; neur < neuronsCapasity[layerNum]; neur++)
+        {
+            layer[layerNum][neur].setPerceptron(neuronsCapasity[layerNum-1]);
+            layer[layerNum][neur].setLearningSpeed(studySpeed);
+        }       
+    }    
 }
 
-double PerceptronLayer::activationFunction(double value)
-{
-    return 1.0 / (1.0 + exp(-value));
+double PerceptronLayer::construct(const vector<double>& parametrs)
+{    
+    exInput=parametrs;
+    double summ=0;
+    for (int i = 0; i < layer[0].size(); i++)
+    {
+        summ+=layer[0][i].construct({parametrs[i]});
+    }
+    
+    for (int layerNum = 1; layerNum < layer.size(); layerNum++)
+    {
+        vector<double> ans(neuronsCapasity[layerNum-1]);
+        for(auto& x:ans) x=summ;
+        summ=0;
+        for (int i = 0; i < neuronsCapasity[layerNum]; i++)
+        {
+            summ+=layer[layerNum][i].construct(ans);
+        }
+        
+    }
+    
+    return summ;
 }
 
-double PerceptronLayer::deactivationFunction(double value)
+void PerceptronLayer::learn(double answear, double error)
 {
-    return activationFunction(value) * (1. - activationFunction(value));
-}
-
-double PerceptronLayer::getOutPut()
-{
-    return activationFunction(summ);;
-}
-
-void PerceptronLayer::setLearningSpeed(double speed)
-{
-    this->learningSpeed=speed;
+    double inError=0;
+    do
+    {
+        inError=0;           
+        
+        for (int layerNum = 1; layerNum < layer.size(); layerNum++)
+        { 
+            
+            for (int i = 0; i < neuronsCapasity[layerNum]; i++)
+            {
+                construct(exInput);
+                layer[layerNum][i].learn(answear);
+                inError+=answear-construct(exInput);
+            }
+            // cout<<(double)(layerNum)/(layer.size())*100<<" % "<<layerNum<<endl;
+            cout<<inError*100<<endl;
+        
+        }
+    } while (inError>=error);
 }
 
 double PerceptronLayer::getError(double answear)
 {
-    return answear-activationFunction(summ);
-}
-
-const vector<double> PerceptronLayer::getWeights() 
-{
-    return weights;
+    return answear-layer[layer.size()-1][0].getOutPut();
 }
