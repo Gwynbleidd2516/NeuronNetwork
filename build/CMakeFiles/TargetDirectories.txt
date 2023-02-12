@@ -1,4 +1,0 @@
-U:/arrrr/NeuronNetwork/build/CMakeFiles/NeuronNetwork.dir
-U:/arrrr/NeuronNetwork/build/CMakeFiles/neur.dir
-U:/arrrr/NeuronNetwork/build/CMakeFiles/ALL_BUILD.dir
-U:/arrrr/NeuronNetwork/build/CMakeFiles/ZERO_CHECK.dir
