@@ -44,6 +44,29 @@ struct Iris
 	Iris(){}
 };
 
+struct Field
+{
+	vector<double> field;
+	vector<double> ans;
+	Field(vector<double>& field, vector<double>& ans)
+	{
+		this->ans=ans;
+		this->field=field;
+	}
+
+	Field() {}
+
+	vector<double> getField()
+	{
+		return field;
+	}
+
+	vector<double> getAnswear()
+	{
+		return ans;
+	}
+};
+
 
 double f(double x)
 {
@@ -346,99 +369,158 @@ int main()
 	// a.learn(1,0.01,1);
 	// cout<<a.construct(aans);
 
-	int capasity=100;
+	// int capasity=100;
 
-	MNIST test(TRAIN_IMAGE_FILE, TRAIN_LABELS_FILE);
-	test.read(capasity);
+	// MNIST test(TRAIN_IMAGE_FILE, TRAIN_LABELS_FILE);
+	// test.read(capasity);
 
-	vector<double> ans;
-	for (int i = 0; i < capasity; i++)
-	{
-		ans.push_back(test.getLabel(i));
-	}
+	// vector<double> ans;
+	// for (int i = 0; i < capasity; i++)
+	// {
+	// 	ans.push_back(test.getLabel(i));
+	// }
 	
-	vector<vector<double>> teach(capasity, vector<double>(0));
-	vector<vector<double>> answears;
-	answears.resize(capasity, vector<double>(10));
-	for (int i = 0; i < ans.size(); i++)
-	{
-		for(auto& x:answears[i])
-		{
-			x=0;
-		}
-		answears[i][ans[i]]=1;
-	}
+	// vector<vector<double>> teach(capasity, vector<double>(0));
+	// vector<vector<double>> answears;
+	// answears.resize(capasity, vector<double>(10));
+	// for (int i = 0; i < ans.size(); i++)
+	// {
+	// 	for(auto& x:answears[i])
+	// 	{
+	// 		x=0;
+	// 	}
+	// 	answears[i][ans[i]]=1;
+	// }
 	
-	for (int i = 0; i < capasity; i++)
-	{
-		for (auto& x:test.getTest(i))
-		{
-			teach[i].push_back((double)x/255);
-		}
-	}
+	// for (int i = 0; i < capasity; i++)
+	// {
+	// 	for (auto& x:test.getTest(i))
+	// 	{
+	// 		teach[i].push_back((double)x/255);
+	// 	}
+	// }
 
-	MultiPerceptron neur(28*28,4,10,0.8);
+	// MultiPerceptron neur(28*28,4,10,0.8);
+	// double error=0;
+	// double epoch=0;
+	// do
+	// {
+	// 	error=0;
+	// 	epoch++;
+	// 	for (int j = 0; j < capasity; j++)
+	// 	{
+	// 		neur.construct(teach[j]);
+	// 		neur.learn(answears[j]);
+	// 		error+=neur.getError(answears[j]);
+	// 		cout<<error<<"\t"<<j<<endl;
+	// 	}
+		
+	// 	error/=epoch;
+	// } while(error>=0.01);
+	
+	// cout<<"Training is completed\n";
+    
+	// MNIST train(TEST_IMAGE_FILE, TEST_LABELS_FILE);
+	// train.read(10000);
+	
+	// vector<vector<double>> teach1(10000, vector<double>(0));
+
+
+	// vector<double> ans1;
+	// for (int i = 0; i < 10000; i++)
+	// {
+	// 	ans1.push_back(train.getLabel(i));
+	// }
+	
+
+	// vector<vector<double>> answears1;
+	// answears1.resize(10000, vector<double>(10));
+	// for (int i = 0; i < ans1.size(); i++)
+	// {
+	// 	for(auto& x:answears1[i])
+	// 	{
+	// 		x=0;
+	// 	}
+	// 	answears1[i][ans1[i]]=1;
+	// }
+	
+	// for (int i = 0; i < 10000; i++)
+	// {
+	// 	for (auto& x:train.getTest(i))
+	// 	{
+	// 		teach1[i].push_back((double)x/255);
+	// 	}
+	// }
+
+	// int result=0;
+	
+    // for (int j = 0; j < 10000; j++)
+    // {
+	// 	vector<double> anse=neur.construct(teach1[j]);
+
+	// 	auto num=max_element(anse.begin(), anse.end())-anse.begin();
+	// 	auto br=max_element(answears1[j].begin(), answears1[j].end())-answears1[j].begin();
+	// 	cout<<num<<" "<<br<<endl;
+	// 	if (num==br) result++;
+	// }
+	// cout<<result;
+
+	MultiPerceptron ns(2,3,1,0.3);
+	vector<double> field(2);
+	vector<double> ans(1);
+	vector<Field> data(4);
+	vector<double> fil={0,0};
+	vector<double> an={0};
+	data[0]=Field(fil,an);
+	fil={1,0};
+	an={1};
+	data[1]=Field(fil,an);
+	fil={0,1};
+	an={1};
+	data[2]=Field(fil,an);
+	fil={1,1};
+	an={0};
+	data[3]=Field(fil,an);
+	// string s;
+	// do
+	// {
+	// 	for(auto& x:field)
+	// 	{
+	// 		cin>>x;
+	// 	}
+
+	// 	for(auto& x:ans)
+	// 	{
+	// 		cin>>x;
+	// 	}
+	// 	data.push_back(Field(field,ans));
+	// 	cout<<"Continue?"<<endl;
+	// 	cin>>s;
+	// } while (s!="n");
+	
 	double error=0;
-	double epoch=0;
 	do
 	{
 		error=0;
-		epoch++;
-		for (int j = 0; j < capasity; j++)
+		for(auto& dat:data)
 		{
-			neur.construct(teach[j]);
-			neur.learn(answears[j]);
-			error+=neur.getError(answears[j]);
-			cout<<error<<"\t"<<j<<endl;
+			ns.construct(dat.getField());
+			error+=pow(ns.getError(dat.getAnswear()),2)/2;
+			// error+=ns.getError(dat.getAnswear());
 		}
-		
-		error/=epoch;
-	} while(error>=0.01);
-	
-	cout<<"Training is completed\n";
-    
-	MNIST train(TEST_IMAGE_FILE, TEST_LABELS_FILE);
-	train.read(10000);
-	
-	vector<vector<double>> teach1(10000, vector<double>(0));
-
-
-	vector<double> ans1;
-	for (int i = 0; i < 10000; i++)
-	{
-		ans1.push_back(train.getLabel(i));
-	}
-	
-
-	vector<vector<double>> answears1;
-	answears1.resize(10000, vector<double>(10));
-	for (int i = 0; i < ans1.size(); i++)
-	{
-		for(auto& x:answears1[i])
+		cout<<error<<endl;
+		for(auto& dat:data)
 		{
-			x=0;
+			ns.learn(dat.getAnswear());
 		}
-		answears1[i][ans1[i]]=1;
-	}
-	
-	for (int i = 0; i < 10000; i++)
+	} while (error>=0.01);
+
+	for(auto& x:field)
 	{
-		for (auto& x:train.getTest(i))
-		{
-			teach1[i].push_back((double)x/255);
-		}
+		cin>>x;
 	}
-
-	int result=0;
-	
-    for (int j = 0; j < 10000; j++)
-    {
-		vector<double> anse=neur.construct(teach1[j]);
-
-		auto num=max_element(anse.begin(), anse.end())-anse.begin();
-		auto br=max_element(answears1[j].begin(), answears1[j].end())-answears1[j].begin();
-		cout<<num<<" "<<br<<endl;
-		if (num==br) result++;
+	for(auto& x:ns.construct(field))
+	{
+		cout<<x<<endl;
 	}
-	cout<<result;
 }

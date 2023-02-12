@@ -202,9 +202,7 @@ void MultiPerceptron::learn(vector<double>& answear)
             
             layers[i][j].learnWithError(err);
         }
-        
     }
-       
 }
 
 double MultiPerceptron::getError(vector<double>& answear)

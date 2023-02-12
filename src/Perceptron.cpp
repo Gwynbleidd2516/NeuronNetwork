@@ -46,8 +46,8 @@ void Perceptron::learn(double answear)
         weights[i]+=learningSpeed*teta*exInputs[i];
     }
     bias+=learningSpeed*teta;
-    construct(exInputs);
-    error=answear-activationFunction(summ);
+    // construct(exInputs);
+    // error=answear-activationFunction(summ);
     for (int i = 0; i < weights.size(); i++)
     {
         double del=0;
