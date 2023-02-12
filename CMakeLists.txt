@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8.12)
 project(NeuronNetwork)
 
-add_executable(${PROJECT_NAME} src/main.cpp src/Neuron.cpp src/NeuronNetwork.cpp src/PerceptronLayer.cpp src/Perceptron.cpp src/MNIST.cpp)
+add_executable(${PROJECT_NAME} src/main.cpp src/MultiPerceptron.cpp src/Neuron.cpp src/NeuronNetwork.cpp src/PerceptronLayer.cpp src/Perceptron.cpp src/MNIST.cpp)
 
 add_library(neur SHARED src/Perceptron.h src/Perceptron.cpp src/MNIST.h src/MNIST.cpp)
 

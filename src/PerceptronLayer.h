@@ -28,5 +28,5 @@ public:
 	
     double construct(const vector<double>& parametrs);
 
-    void learn(double answear, double error);
+    void learn(double answear);
 };

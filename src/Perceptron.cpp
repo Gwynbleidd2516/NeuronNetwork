@@ -44,10 +44,17 @@ void Perceptron::learn(double answear)
     for (int i = 0; i < weights.size(); i++)
     {
         weights[i]+=learningSpeed*teta*exInputs[i];
-        errors[i]=weights[i]*teta;
     }
-    
     bias+=learningSpeed*teta;
+    construct(exInputs);
+    error=answear-activationFunction(summ);
+    for (int i = 0; i < weights.size(); i++)
+    {
+        double del=0;
+        for(auto& x:weights) del+=x;
+        
+        errors[i]=error*(weights[i]/del);
+    }
 }
 
 void Perceptron::learnWithError(double error)
@@ -57,12 +64,18 @@ void Perceptron::learnWithError(double error)
     for (int i = 0; i < weights.size(); i++)
     {
         weights[i]+=learningSpeed*teta*exInputs[i];
-        errors[i]=weights[i]*teta;
     }
     bias+=learningSpeed*teta;
+    for (int i = 0; i < weights.size(); i++)
+    {
+        double del=0;
+        for(auto& x:weights) del+=x;
+        
+        errors[i]=error*(weights[i]/del);
+    }
 }
 
-const vector<double> Perceptron::getError()
+vector<double> Perceptron::getError() const
 {
     return errors;
 }

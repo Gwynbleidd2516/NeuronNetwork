@@ -37,7 +37,7 @@ public:
 
     const double getError(double answear);
 
-    const vector<double> getError();
+    vector<double> getError() const;
 
     const vector<double> getWeights();
 
